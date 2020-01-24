@@ -1,10 +1,38 @@
 <html>
     <head>
         <script src='app.js' defer></script>
+
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: verdana;
+            }
+
+            .employees {
+                display: flex;
+                list-style-type: none;
+                flex-wrap: wrap;
+            }
+
+            .employees li {
+                display: flex;
+                margin: 1rem;
+                padding: 1rem;
+                border: solid 1px black;
+                width: calc(100% / 3 - 2rem);
+                justify-content: center;
+                background-color: lightblue;
+                border-radius: 10px;
+            }
+
+        </style>
     </head>
     <body>
-        <ul>
-
+        <h1>Acme Employees Dom</h1>
+        <ul class="employees">
         </ul>
     </body>
 </html>

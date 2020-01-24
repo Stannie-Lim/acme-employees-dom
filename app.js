@@ -10,11 +10,16 @@ const employees = [
   ];
 
   const list = document.querySelector('ul');
-  
+  list.addEventListener('click', (ev) => {
+    const target = ev.target;
+    if(target.tagName === 'LI') {
+        target.style.background = "beige";
+    }
+  });
 
   const render = () => {
     const html = employees.map(employee => {
-        return `<li>${ employee.name }</li>`;
+        return `<li>${employee.name}</li>`;
     }).join('');
     list.innerHTML = html;
   };
