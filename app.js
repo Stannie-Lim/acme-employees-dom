@@ -13,7 +13,11 @@ const employees = [
   list.addEventListener('click', (ev) => {
     const target = ev.target;
     if(target.tagName === 'LI') {
-        target.style.background = "beige";
+        if(target.style.background === "beige") {
+            target.style.background = "lightblue";
+        } else {
+            target.style.background = "beige";
+        }
     }
   });
 
