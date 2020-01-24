@@ -10,14 +10,30 @@ const employees = [
   ];
 
   const list = document.querySelector('ul');
+
+  let favorites = 0;
   list.addEventListener('click', (ev) => {
     const target = ev.target;
-    if(target.tagName === 'LI') {
+    if(target.tagName === 'LI' && favorites < 3) {
+        /*
+        const index = [...list.children].indexOf(target);
+        employees[index].favorite = !employees[index].favorite;
+        */
         if(target.style.background === "beige") {
             target.style.background = "lightblue";
+            favorites--;
         } else {
             target.style.background = "beige";
+            favorites++;
         }
+    }
+    else if(target.tagName === 'LI' && favorites >= 3) {
+        if(target.style.background === "beige") {
+            target.style.background = "lightblue";
+            favorites--;
+            return;
+        }
+        alert("too many favorites");
     }
   });
 
